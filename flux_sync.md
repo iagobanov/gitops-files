@@ -70,7 +70,7 @@ Replace <ID> with the actual ID of your source-controller pod.
 You should see logs indicating that the new changes have been detected and applied to the cluster:
 
 ```json
-{"level":"info","ts":...,"logger":"controller.gitrepository","msg":"Reconciliation finished in ...","reconciler group":"source.toolkit.fluxcd.io","reconciler kind":"GitRepository","name":"flux-system","namespace":"flux-system","commit":"<COMMIT_HASH>","revision":"main/<COMMIT_HASH>"}
+{"level":"info","ts":"...","logger":"controller.gitrepository","msg":"Reconciliation finished in ...","reconciler group":"source.toolkit.fluxcd.io","reconciler kind":"GitRepository","name":"flux-system","namespace":"flux-system","commit":"<COMMIT_HASH>","revision":"main/<COMMIT_HASH>"}
 ```
 
 5. Verify that the updated manifest has been applied to the cluster using kubectl:
