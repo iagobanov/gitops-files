@@ -10,8 +10,6 @@ Repository Overview: https://github.com/lusoal/eks-cluster-upgrades-reference-ar
 ## Kustomize
 Kustomize is a Kubernetes-native configuration management tool that allows you to customize Kubernetes manifests declaratively without templating. It helps manage and deploy complex applications by generating customized resource configurations from reusable base manifests and environment-specific patches.
 
-A CustomResourceDefinition (CRD) is a Kubernetes API extension to define custom resources with their own schema and API. CRDs enable the extension of the Kubernetes API and the creation of custom objects with behavior similar to built-in objects, such as Pods or Deployments.
-
 In the context of Flux, a Kustomization object is a custom resource defined by the Kustomization CRD. Flux uses Kustomization resources to manage Kubernetes manifests, specifying the syncing interval, pruning resources, and validating manifests before applying them.
 
 ## Applications Folder
