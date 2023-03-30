@@ -6,6 +6,14 @@ In this topic, we will explore the Flux configurations within the GitHub reposit
 
 Repository Overview: https://github.com/lusoal/eks-cluster-upgrades-reference-arch
 
+
+## Kustomize
+Kustomize is a Kubernetes-native configuration management tool that allows you to customize Kubernetes manifests declaratively without templating. It helps manage and deploy complex applications by generating customized resource configurations from reusable base manifests and environment-specific patches.
+
+A CustomResourceDefinition (CRD) is a Kubernetes API extension to define custom resources with their own schema and API. CRDs enable the extension of the Kubernetes API and the creation of custom objects with behavior similar to built-in objects, such as Pods or Deployments.
+
+In the context of Flux, a Kustomization object is a custom resource defined by the Kustomization CRD. Flux uses Kustomization resources to manage Kubernetes manifests, specifying the syncing interval, pruning resources, and validating manifests before applying them.
+
 ## Applications Folder
 
 1. `01-sample-app1.yaml` - This file defines a Kubernetes deployment for a sample application called "nginx". It contains the specifications for the deployment, such as the desired number of replicas, labels, and the container image to be used. Additionally, it includes resource limits and requests, as well as the necessary environment variables.
@@ -27,5 +35,9 @@ This folder contains the Flux configuration files specific to a Kubernetes clust
     - `gotk-sync.yaml` - This file defines the synchronization configuration for the Flux GitRepository and Kustomization resources in "cluster-demo". It specifies the target GitHub repository, the branch to sync, and the path to the Kustomize configuration for both the Applications and Add-ons folders.
 
 2. `kustomization.yaml` - This file is a Kustomize configuration file that lists the resources to be included when applying the Flux configuration for "cluster-demo". It references the flux-system/gotk-components.yaml and flux-system/gotk-sync.yaml files.
+
+3. `infra.yaml` - This file is a Kustomization resource definition for Flux, responsible for configuring how Flux deploys and manages the manifests present in the ./gitops/add-ons directory of the connected Git repository.
+
+4. `apps.yaml` - The apps.yaml file is a Kustomization resource definition for Flux, responsible for configuring how Flux deploys and manages the manifests present in the ./gitops/applications directory of the connected Git repository.
 
 With this understanding of the Clusters folder and flux-system subfolder, you can better manage multi-cluster environments using Flux. You can create a separate folder for each of your Kubernetes clusters and maintain cluster-specific Flux configurations in their respective directories. This approach ensures that each cluster's Flux setup is properly version-controlled and tailored to the cluster's specific requirements.
