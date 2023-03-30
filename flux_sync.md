@@ -1,3 +1,5 @@
+## GitOps Reconciliation flow
+
 In this step-by-step guide, we will walk through the process of GitOps reconciliation using Flux in a Kubernetes cluster. We'll modify the 01-sample-app.yaml file from the GitHub repository (https://github.com/lusoal/eks-cluster-upgrades-reference-arch) and observe Flux detecting and applying the changes.
 
 ## Flux Reconciliation
